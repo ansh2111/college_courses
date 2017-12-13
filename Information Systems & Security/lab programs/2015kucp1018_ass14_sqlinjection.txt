@@ -1,0 +1,43 @@
+SQL INJECTION:
+	SQL injection is a code injection technique that might destroy your database.
+	SQL injection is one of the most common web hacking techniques.
+	SQL injection is the placement of malicious code in SQL statements, via web page input.
+
+FEW METHODS:
+	SQL injection usually occurs when you ask a user for input, like their username/userid, and instead of a name/id, 
+	the user gives you an SQL statement that you will unknowingly run on your database.
+
+	Example:
+	uid = getRequestString("userid");
+	sql = "SELECT * FROM Users WHERE userid = " + uid;
+
+	1.SQL Injection Based on 1=1 is Always True
+
+	If there is nothing to prevent a user from entering "wrong" input, the user can enter some "smart" input like this:
+	userid: 105 OR 1=1
+	Then, the SQL statement will look like this: SELECT * FROM Users WHERE userid = 105 OR 1=1;
+	The SQL above is valid and will return ALL rows from the "Users" table, since OR 1=1 is always TRUE. Similarly, Passwords can also be injected with 1=1.
+
+	2.SQL Injection Based on ""="" is Always True
+
+	Here is an example of a user login on a web site:
+	Username:John Doe
+	Password:abcd123
+
+	Example
+	uname = getRequestString("username");
+	pass = getRequestString("password");
+	sql = 'SELECT * FROM Users WHERE Username ="' + uname + '" AND password ="' + pass + '"'
+
+
+	Result : SELECT * FROM Users WHERE Username ="John Doe" AND password ="abcd123"
+
+	A hacker might get access to user names and passwords in a database by simply inserting " OR ""=" into the user name or password text box:
+	The code at the server will create a valid SQL statement like this:
+	Result: SELECT * FROM Users WHERE Username ="" or ""="" AND password ="" or ""=""
+	The SQL above is valid and will return all rows from the "Users" table, since OR ""="" is always TRUE.
+
+REFERENCES:	
+	I have used an online site to perform sql injection "http://sqlzoo.net/hack/"
+	In this we get access to username account by entering  'OR''='  as username and password. 
+	And we get access to the account because this query always executes successfully.
