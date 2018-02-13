@@ -1,0 +1,6 @@
+A->BC
+C->+BC/?
+B->DE
+E->*DE/?
+D->i/(A)/a
+E

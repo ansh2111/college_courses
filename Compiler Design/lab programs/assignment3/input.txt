@@ -1,0 +1,4 @@
+S->aAB/Sa/bB/Sb
+A->Ac
+B->Bb
+C->NULL

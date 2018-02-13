@@ -1,0 +1,12 @@
+int main()
+{
+	int a1,b_2;
+	a1=5&4;
+	b_2=9;
+	b_2*=2;
+	int c=a1 ++;
+	char ch[100];
+	//print statement
+	printf("a1=%d, b_2=%d",a1,b_2);
+	return 0;
+}

@@ -1,0 +1,11 @@
+10
+float
+int
+hello
+fortran
+size
+goto
+auto
+continue
+1return
+un
